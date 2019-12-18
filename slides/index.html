@@ -1,0 +1,182 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Chrome Devtool tips</title>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/monokai.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h3>Chrome devtool 小技巧</h3>
+        </section>
+
+        <section>
+          <section>
+            <h4>大纲</h4>
+            <ul>
+              <li class="fragment">元素审查</li class="fragment">
+              <li class="fragment">第三方工具</li>
+              <li class="fragment">Console 控制台</li>
+              <li class="fragment">Source</li>
+              <li class="fragment">Network 网络监测</li>
+              <li class="fragment">Performance 性能测试工具</li>
+              <li class="fragment">device toolbar 设备调试工具</li>
+              <li class="fragment">Application</li>
+              <li class="fragment">...</li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h5>元素审查</h5>
+          </section>
+          <section>
+            <ul style="font-size:60%;">
+              <li style="margin-bottom:0.8em;" class="fragment">styles</li>
+              <li style="margin-bottom:0.8em;" class="fragment">color picker </li>
+              <li style="margin-bottom:0.8em;" class="fragment">box-shadow 调试工具</li>
+              <li style="margin-bottom:0.8em;" class="fragment">cubic-bezier 调试工具</li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h5>第三方工具</h5>
+            <div data-markdown>
+              <script type="text/template">
+                - [vue-devtool](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
+                - [react-devtool](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?utm_source=chrome-ntp-icon)
+              </script>
+            </div>
+          </section>
+          <section>
+            <h2>Vue devtool</h2>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h5>Console 控制台</h5>
+            <ul>
+              <li class="fragment">应用日志输出</li>
+              <li class="fragment">js调试引擎</li>
+              <li class="fragment">log formatter</li>
+            </ul>
+          </section>
+          <section>
+            <p>log formatter</p>
+            <div data-markdown>
+              <script type="text/template">
+                > demo function
+                ```js
+                function warn(msg) {
+                  // eslint-disable-next-line no-console
+                  console.warn(
+                    `%c Console warn %c ${msg}`,
+                    'background:#f90;padding:1px;border-radius:3px;color:#fff',
+                    'background:transparent'
+                  )
+                }
+                ```
+                ```js
+                function error(msg) {
+                  // eslint-disable-next-line no-console
+                  console.error(
+                    `%c Console error %c ${msg}`,
+                    'background:#e30;padding:1px;border-radius:3px;color:#fff',
+                    'background:transparent'
+                  )
+                }
+                ```
+              </script>
+            </div>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h5>Network 网络监测</h5>
+            <ul>
+              <li class="fragment">Filter</li>
+              <li class="fragment">Throttling</li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h5>Sources</h5>
+            <ul>
+              <li>Source Map</li>
+              <li>Snippets</li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <h5>Performance 性能测试工具</h5>
+        </section>
+
+        <section>
+          <h5>设备调试工具</h5>
+        </section>
+
+        <section>
+          <section>
+            <h5>Application</h5>
+            <ul>
+              <li>浏览器存储</li>
+              <li>PWA相关</li>
+            </ul>
+          </section>
+          <section>
+            <p>浏览器存储</p>
+            <ul>
+              <li>Local Storage & Session Storage</li>
+              <li>IndexdDB & Web SQL</li>
+              <li>Cookies</li>
+            </ul>
+          </section>
+        </section>
+
+      </div>
+    </div>
+
+    <script src="js/reveal.js"></script>
+
+    <script>
+      // More info about config & dependencies:
+      // - https://github.com/hakimel/reveal.js#configuration
+      // - https://github.com/hakimel/reveal.js#dependencies
+      Reveal.initialize({
+        dependencies: [
+          { src: 'plugin/markdown/marked.js' },
+          { src: 'plugin/markdown/markdown.js' },
+          { src: 'plugin/notes/notes.js', async: true },
+          { src: 'plugin/highlight/highlight.js', async: true }
+        ]
+      });
+    </script>
+  </body>
+</html>
